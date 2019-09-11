@@ -50,16 +50,16 @@ foldersRouter
       req.app.get('db'),
       req.params.folder_id
     )
-.then(folder => {
+  .then(folder => {
     if (!folder) {
     return res.status(404).json({
-        error: { message: `Folder doesn't exist` }
-    })
-        }
-        res.folder = folder
-        next()
-    })
-    .catch(next)
+         error: { message: `Folder doesn't exist` }
+      })
+    }
+      res.folder = folder
+     next()
+  })
+  .catch(next)
 })
 .get((req, res, next) => {
     res.json(serializeFolder(res.folder))
