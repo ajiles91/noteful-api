@@ -26,7 +26,8 @@ notesRouter
   })
   .post(jsonParser, (req, res, next) => {
     const { name, folderId, modified, content } = req.body
-    const newNote = { title: name,
+    const newNote = { 
+      title: name,
       folder_id: folderId,
       modified
     }
